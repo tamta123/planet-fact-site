@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Text from "./text";
 import Images from "./images";
+import Footer from "./footer";
 
 const Planets = () => {
   const { name } = useParams();
@@ -63,13 +64,9 @@ const Planets = () => {
           Surface
         </span>
       </div>
-      <Images
-        planet={planet}
-        status={currentDesktop.status}
-        image={currentDesktop.image}
-        currentDesktop={currentDesktop}
-      />
+      <Images planet={planet} status={currentDesktop.status} />
       <Text planet={planet} currentDesktop={currentDesktop} />
+      <Footer planet={planet} />
     </div>
   );
 };

@@ -1,21 +1,31 @@
-import planetData from "../data.json";
-
-const Images = ({ planet, status, currentDesktop }) => {
+const Images = ({ planet, status }) => {
   const renderImage = () => {
-    if (currentDesktop.status === "overview") {
-      return currentDesktop.image;
-    } else if (currentDesktop.status === "structure") {
-      return planet.images.structure;
+    if (status === "overview") {
+      return planet.images.planet;
+    } else if (status === "structure") {
+      return planet.images.internal;
     } else if (status === "geology") {
       return planet.images.geology;
     }
     return null;
   };
+
   const imageSrc = renderImage();
 
   return (
-    <div>
-      <img src={imageSrc} alt={`${planet.name} ${status}`} />
+    <div className="flex justify-center">
+      {status === "geology" ? (
+        <>
+          <img className="relative" src={planet.images.planet} />
+          <img className="absolute top-40" src={planet.images.geology} />
+        </>
+      ) : (
+        <img
+          className="w-40 h-40 "
+          src={imageSrc}
+          alt={`${planet.name} ${status}`}
+        />
+      )}
     </div>
   );
 };
