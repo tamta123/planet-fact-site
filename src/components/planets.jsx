@@ -1,19 +1,77 @@
 import planetData from "../data.json";
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Text from "./text";
+import Images from "./images";
 
 const Planets = () => {
   const { name } = useParams();
 
-  //    By using the curly braces around name, you are destructuring the returned object and extracting the value of the name
-  //     parameter specifically. This syntax allows you to create a variable named name and assign it the value of the name
-  //     parameter from the URL.  in the case of const { name } = useParams();, the curly braces indicate that we want to
-  //     extract the name property from the returned object and assign it to a variable named name.
-  //     This allows us to conveniently access the extracted name value within the Planets component.
-
   const planet = planetData.find((planet) => planet.name === name);
-  console.log(planet.name);
+  console.log(planet);
 
-  return <div>Planets</div>;
+  const [currentDesktop, setCurrentDesktop] = useState({
+    status: "overview",
+    image: "",
+    about: "",
+    source: "",
+  });
+
+  const updateCurrentDesktop = (status) => {
+    setCurrentDesktop((prevState) => ({
+      ...prevState,
+      status: status,
+      image: planet.images[status],
+      about: planet[status].content,
+      source: planet[status].source,
+    }));
+  };
+
+  useEffect(() => {
+    if (planet) {
+      updateCurrentDesktop("overview");
+    }
+  }, [planet]);
+
+  console.log(currentDesktop.status.image);
+
+  return (
+    <div>
+      <div className="flex gap-x-14 py-4 px-6">
+        <span
+          className={`font-spartan font-normal font-semibold text-xs leading-10 text-center tracking-wider uppercase ${
+            currentDesktop.status === "overview" ? "active" : ""
+          } text-white`}
+          onClick={() => updateCurrentDesktop("overview")}
+        >
+          OVERVIEW
+        </span>
+        <span
+          className={`font-spartan font-normal font-semibold text-xs leading-10 text-center tracking-wider uppercase ${
+            currentDesktop.status === "structure" ? "active" : ""
+          } text-white`}
+          onClick={() => updateCurrentDesktop("structure")}
+        >
+          Structure
+        </span>
+        <span
+          className={`font-spartan font-normal font-semibold text-xs leading-10 text-center tracking-wider uppercase ${
+            currentDesktop.status === "geology" ? "active" : ""
+          } text-white`}
+          onClick={() => updateCurrentDesktop("geology")}
+        >
+          Surface
+        </span>
+      </div>
+      <Images
+        planet={planet}
+        status={currentDesktop.status}
+        image={currentDesktop.image}
+        currentDesktop={currentDesktop}
+      />
+      <Text planet={planet} currentDesktop={currentDesktop} />
+    </div>
+  );
 };
 
 export default Planets;
