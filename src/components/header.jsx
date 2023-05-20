@@ -34,7 +34,10 @@ const Header = () => {
           }`}
         >
           {planetData.map((planet) => (
-            <li key={planet.name}>
+            <li
+              key={planet.name}
+              className="font-spartan font-semibold text-xs leading-5 tracking-wide uppercase text-white text-center py-2"
+            >
               <Link to={`/${planet.name}`} onClick={toggleMenu}>
                 {planet.name}
               </Link>
