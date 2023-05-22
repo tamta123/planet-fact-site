@@ -13,11 +13,14 @@ const Images = ({ planet, status }) => {
   const imageSrc = renderImage();
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center mt-16">
       {status === "geology" ? (
         <>
-          <img className="relative" src={planet.images.planet} />
-          <img className="absolute top-40" src={planet.images.geology} />
+          <img className="relative w-40 h-40 " src={planet.images.planet} />
+          <img
+            className="absolute bottom-100 w-20 h-30"
+            src={planet.images.geology}
+          />
         </>
       ) : (
         <img

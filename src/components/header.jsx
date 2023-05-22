@@ -27,16 +27,16 @@ const Header = () => {
           <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
         </g>
       </svg>
-      <div className="relative">
+      <div className="w-full fixed top-14 left-0 ">
         <ul
-          className={`display flex flex-col absolute right-0 top-full ${
+          className={` md:flex flex-col items-start w-full pl-6 bg-header-blue  ${
             isMenuOpen ? "flex" : "hidden"
           }`}
         >
           {planetData.map((planet) => (
             <li
               key={planet.name}
-              className="font-spartan font-semibold text-xs leading-5 tracking-wide uppercase text-white text-center py-2"
+              className="font-spartan font-semibold text-xs leading-5 tracking-wide uppercase pb-5 text-white text-center py-2"
             >
               <Link to={`/${planet.name}`} onClick={toggleMenu}>
                 {planet.name}

@@ -38,31 +38,31 @@ const Planets = () => {
 
   return (
     <div>
-      <div className="flex gap-x-14 py-4 px-6">
-        <span
-          className={`font-spartan font-normal font-semibold text-xs leading-10 text-center tracking-wider uppercase ${
+      <div className="flex gap-x-14 py-4 px-6 w-full border-[2px] z-30 border-white">
+        <button
+          className={`font-spartan font-semibold text-xs text-center tracking-wider uppercase ${
             currentDesktop.status === "overview" ? "active" : ""
           } text-white`}
           onClick={() => updateCurrentDesktop("overview")}
         >
           OVERVIEW
-        </span>
-        <span
-          className={`font-spartan font-normal font-semibold text-xs leading-10 text-center tracking-wider uppercase ${
+        </button>
+        <button
+          className={`font-spartan font-semibold text-xs text-center tracking-wider uppercase ${
             currentDesktop.status === "structure" ? "active" : ""
           } text-white`}
           onClick={() => updateCurrentDesktop("structure")}
         >
           Structure
-        </span>
-        <span
-          className={`font-spartan font-normal font-semibold text-xs leading-10 text-center tracking-wider uppercase ${
+        </button>
+        <button
+          className={`font-spartan font-semibold text-xs text-center tracking-wider uppercase ${
             currentDesktop.status === "geology" ? "active" : ""
           } text-white`}
           onClick={() => updateCurrentDesktop("geology")}
         >
           Surface
-        </span>
+        </button>
       </div>
       <Images planet={planet} status={currentDesktop.status} />
       <Text planet={planet} currentDesktop={currentDesktop} />
