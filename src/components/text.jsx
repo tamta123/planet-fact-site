@@ -12,7 +12,7 @@ const Text = ({ planet, currentDesktop }) => {
       <p className="text-xs font-normal leading-5 text-center text-white font-spartan mb-8">
         {currentDesktop.about}
       </p>
-      <div className="flex align-middle justify-center text-xs font-normal leading-6 text-white font-spartan mix-blend-normal opacity-50">
+      <div className="flex items-center justify-center text-xs font-normal leading-6 text-white font-spartan mix-blend-normal opacity-50">
         <span>source:</span>
         <span className="font-bold">{planet.source}</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">

@@ -7,14 +7,15 @@ import backgroundImage from "../public/assets/background-stars.svg";
 
 function App() {
   const rootStyle = {
-    height: "100%",
+    height: "100vh",
     backgroundImage: `url(${backgroundImage})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
+    animation: "float 15s linear infinite", // Fixed animation value
   };
   return (
-    <div id="root" style={rootStyle}>
+    <div id="container" style={rootStyle}>
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/Neptune" />} />

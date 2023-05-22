@@ -27,23 +27,30 @@ const Header = () => {
           <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
         </g>
       </svg>
-      <div className="w-full fixed top-14 left-0 ">
-        <ul
-          className={` md:flex flex-col items-start w-full pl-6 bg-header-blue  ${
-            isMenuOpen ? "flex" : "hidden"
-          }`}
-        >
-          {planetData.map((planet) => (
-            <li
-              key={planet.name}
-              className="font-spartan font-semibold text-xs leading-5 tracking-wide uppercase pb-5 text-white text-center py-2"
-            >
-              <Link to={`/${planet.name}`} onClick={toggleMenu}>
-                {planet.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <div className="w-full fixed top-14 left-0 z-20 transition-all duration-500 ease-in">
+        {isMenuOpen ? (
+          <ul className="md:flex flex-col items-start w-full pl-6 pr-6 bg-header-blue">
+            {planetData.map((planet) => (
+              <div
+                key={planet.name}
+                className="flex items-center pb-5 pt-5 border-solid border-b-2 border-white border-opacity-10"
+              >
+                <div
+                  className="w-4 h-4 rounded-full mr-6 "
+                  style={{ backgroundColor: planet.color }}
+                ></div>
+                <li
+                  key={planet.name}
+                  className="font-spartan text-center font-semibold text-xs leading-5 tracking-wide uppercase text-white "
+                >
+                  <Link to={`/${planet.name}`} onClick={toggleMenu}>
+                    {planet.name}
+                  </Link>
+                </li>
+              </div>
+            ))}
+          </ul>
+        ) : null}
       </div>
     </header>
   );

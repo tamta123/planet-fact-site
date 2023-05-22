@@ -35,29 +35,36 @@ const Planets = () => {
   }, [planet]);
 
   console.log(currentDesktop.status.image);
+  console.log(`border-[${planet.color}]`);
 
   return (
-    <div>
-      <div className="flex gap-x-14 py-4 px-6 w-full border-[2px] z-30 border-white">
+    <>
+      <div className="flex justify-between  px-6 w-full border-solid border-2 border-white border-opacity-20">
         <button
-          className={`font-spartan font-semibold text-xs text-center tracking-wider uppercase ${
-            currentDesktop.status === "overview" ? "active" : ""
+          className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider opacity-50 uppercase ${
+            currentDesktop.status === "overview"
+              ? `opacity-100 border-[red]`
+              : "border-transparent"
           } text-white`}
           onClick={() => updateCurrentDesktop("overview")}
         >
           OVERVIEW
         </button>
         <button
-          className={`font-spartan font-semibold text-xs text-center tracking-wider uppercase ${
-            currentDesktop.status === "structure" ? "active" : ""
+          className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider opacity-50 uppercase ${
+            currentDesktop.status === "structure"
+              ? `opacity-100 border-[${planet.color}]`
+              : "border-transparent"
           } text-white`}
           onClick={() => updateCurrentDesktop("structure")}
         >
           Structure
         </button>
         <button
-          className={`font-spartan font-semibold text-xs text-center tracking-wider uppercase ${
-            currentDesktop.status === "geology" ? "active" : ""
+          className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider opacity-50 uppercase ${
+            currentDesktop.status === "geology"
+              ? `opacity-100 border-[${planet.color}]`
+              : "border-transparent"
           } text-white`}
           onClick={() => updateCurrentDesktop("geology")}
         >
@@ -67,7 +74,7 @@ const Planets = () => {
       <Images planet={planet} status={currentDesktop.status} />
       <Text planet={planet} currentDesktop={currentDesktop} />
       <Footer planet={planet} />
-    </div>
+    </>
   );
 };
 
