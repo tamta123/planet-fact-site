@@ -5,8 +5,9 @@ import Text from "./text";
 import Images from "./images";
 import Footer from "./footer";
 
-const Planets = () => {
+const Planets = ({ isMenuOpen }) => {
   const { name } = useParams();
+  console.log(isMenuOpen);
 
   const planet = planetData.find((planet) => planet.name === name);
   console.log(planet);
@@ -34,46 +35,68 @@ const Planets = () => {
     }
   }, [planet]);
 
-  console.log(currentDesktop.status.image);
-  console.log(`border-[${planet.color}]`);
-
   return (
     <>
-      <div className="flex justify-between  px-6 w-full border-solid border-2 border-white border-opacity-20">
+      <div className="flex justify-between  px-6 w-full border-solid border-b-2 border-t-2 border-white border-opacity-20 mt-[70px]">
         <button
-          className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider opacity-50 uppercase ${
-            currentDesktop.status === "overview"
-              ? `opacity-100 border-[red]`
-              : "border-transparent"
-          } text-white`}
+          className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider  text-white  uppercase `}
+          style={{
+            opacity: isMenuOpen
+              ? "1"
+              : currentDesktop.status === "overview"
+              ? "1"
+              : "0.5",
+            borderColor:
+              currentDesktop.status === "overview"
+                ? planet.color
+                : "transparent",
+          }}
           onClick={() => updateCurrentDesktop("overview")}
         >
           OVERVIEW
         </button>
         <button
-          className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider opacity-50 uppercase ${
-            currentDesktop.status === "structure"
-              ? `opacity-100 border-[${planet.color}]`
-              : "border-transparent"
-          } text-white`}
+          className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider uppercase  text-white`}
+          style={{
+            opacity: isMenuOpen
+              ? "1"
+              : currentDesktop.status === "structure"
+              ? "1"
+              : "0.5",
+            borderColor:
+              currentDesktop.status === "structure"
+                ? planet.color
+                : "transparent",
+          }}
           onClick={() => updateCurrentDesktop("structure")}
         >
           Structure
         </button>
         <button
-          className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider opacity-50 uppercase ${
-            currentDesktop.status === "geology"
-              ? `opacity-100 border-[${planet.color}]`
-              : "border-transparent"
-          } text-white`}
+          className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider uppercase   text-white`}
+          style={{
+            opacity: isMenuOpen
+              ? "1"
+              : currentDesktop.status === "geology"
+              ? "1"
+              : "0.5",
+            borderColor:
+              currentDesktop.status === "geology"
+                ? planet.color
+                : "transparent",
+          }}
           onClick={() => updateCurrentDesktop("geology")}
         >
           Surface
         </button>
       </div>
       <Images planet={planet} status={currentDesktop.status} />
-      <Text planet={planet} currentDesktop={currentDesktop} />
-      <Footer planet={planet} />
+      <Text
+        planet={planet}
+        currentDesktop={currentDesktop}
+        isMenuOpen={isMenuOpen}
+      />
+      <Footer planet={planet} isMenuOpen={isMenuOpen} />
     </>
   );
 };

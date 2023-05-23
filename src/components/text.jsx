@@ -1,9 +1,4 @@
-import planetData from "../data.json";
-
-const Text = ({ planet, currentDesktop }) => {
-  // const sourceUrl = new URL(currentDesktop.source);
-  // const sourceDomain = sourceUrl.hostname.split(".")[1];
-
+const Text = ({ planet, currentDesktop, isMenuOpen }) => {
   return (
     <div className="px-4 mt-16 mb-7">
       <h2 className="text-4xl font-normal leading-10 text-center uppercase text-white font-antonio mb-4">
@@ -12,9 +7,19 @@ const Text = ({ planet, currentDesktop }) => {
       <p className="text-xs font-normal leading-5 text-center text-white font-spartan mb-8">
         {currentDesktop.about}
       </p>
-      <div className="flex items-center justify-center text-xs font-normal leading-6 text-white font-spartan mix-blend-normal opacity-50">
+      <div
+        className="flex gap-[4px] items-center justify-center text-xs font-normal leading-6 text-white font-spartan mix-blend-normal opacity-50"
+        style={{ opacity: isMenuOpen ? "1" : "0.5" }}
+      >
         <span>source:</span>
-        <span className="font-bold">{planet.source}</span>
+        <a
+          href={currentDesktop.source}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold ml-1 underline"
+        >
+          Wikipedia
+        </a>
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
           <path
             fill="#FFF"
