@@ -7,10 +7,7 @@ const Text = ({ planet, currentDesktop, isMenuOpen }) => {
       <p className="text-xs font-normal leading-5 text-center text-white font-spartan mb-8">
         {currentDesktop.about}
       </p>
-      <div
-        className="flex gap-[4px] items-center justify-center text-xs font-normal leading-6 text-white font-spartan mix-blend-normal opacity-50"
-        style={{ opacity: isMenuOpen ? "1" : "0.5" }}
-      >
+      <div className="flex gap-[4px] items-center justify-center text-xs font-normal leading-6 text-white font-spartan mix-blend-normal opacity-50">
         <span>source:</span>
         <a
           href={currentDesktop.source}

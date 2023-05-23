@@ -41,11 +41,7 @@ const Planets = ({ isMenuOpen }) => {
         <button
           className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider  text-white  uppercase `}
           style={{
-            opacity: isMenuOpen
-              ? "1"
-              : currentDesktop.status === "overview"
-              ? "1"
-              : "0.5",
+            opacity: currentDesktop.status === "overview" ? "1" : "0.5",
             borderColor:
               currentDesktop.status === "overview"
                 ? planet.color
@@ -58,11 +54,7 @@ const Planets = ({ isMenuOpen }) => {
         <button
           className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider uppercase  text-white`}
           style={{
-            opacity: isMenuOpen
-              ? "1"
-              : currentDesktop.status === "structure"
-              ? "1"
-              : "0.5",
+            opacity: currentDesktop.status === "structure" ? "1" : "0.5",
             borderColor:
               currentDesktop.status === "structure"
                 ? planet.color
@@ -75,11 +67,7 @@ const Planets = ({ isMenuOpen }) => {
         <button
           className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider uppercase   text-white`}
           style={{
-            opacity: isMenuOpen
-              ? "1"
-              : currentDesktop.status === "geology"
-              ? "1"
-              : "0.5",
+            opacity: currentDesktop.status === "geology" ? "1" : "0.5",
             borderColor:
               currentDesktop.status === "geology"
                 ? planet.color

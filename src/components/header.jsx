@@ -5,7 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 const Header = ({ toggleMenu, isMenuOpen }) => {
   return (
-    <header className="flex top-0 fixed h-auto w-full items-center justify-center py-4 px-6 bg-header-blue md:justify-center ">
+    <header className="flex z-999 top-0 fixed h-auto w-full items-center justify-center py-4 px-6 bg-header-blue md:justify-center ">
       <h1 className="font-antonio  font-medium text-base leading-9 tracking-tight uppercase text-white	">
         THE PLANETS
       </h1>
@@ -20,7 +20,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
           <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
         </g>
       </svg>
-      <div className="w-full fixed top-[63px] left-0 z-20 transition-all duration-500 ease-in">
+      <div className="w-full z-999 fixed top-[63px] left-0 z-20 transition-all duration-500 ease-in">
         {isMenuOpen ? (
           <ul className="md:flex flex-col items-start w-full pl-6 pr-6 bg-header-blue z-999">
             {planetData.map((planet) => (
