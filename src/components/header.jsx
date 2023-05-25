@@ -22,7 +22,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
       </svg>
       <div className="w-full z-999 fixed top-[63px] left-0 z-20 transition-all duration-500 ease-in">
         {isMenuOpen ? (
-          <ul className="md:flex flex-col items-start w-full pl-6 pr-6 bg-header-blue z-999">
+          <ul className="flex flex-col items-start w-full pl-6 pr-6 bg-header-blue z-999 ">
             {planetData.map((planet) => (
               <div
                 key={planet.name}
@@ -43,7 +43,28 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
               </div>
             ))}
           </ul>
-        ) : null}
+        ) : (
+          ""
+        )}
+      </div>
+      <div className="hidden md:flex w-full z-999 fixed top-[63px] left-0 z-20">
+        <ul className="flex flex-row items-start w-full pl-6 pr-6 bg-header-blue z-999 md:flex-row">
+          {planetData.map((planet) => (
+            <div
+              key={planet.name}
+              className="flex w-full items-center pb-5 pt-5 border-solid border-b-2 border-white border-opacity-10  bg-header-blue"
+            >
+              <li
+                key={planet.name}
+                className="font-spartan text-center font-semibold text-xs leading-5 tracking-wide uppercase text-white "
+              >
+                <Link to={`/${planet.name}`} onClick={toggleMenu}>
+                  {planet.name}
+                </Link>
+              </li>
+            </div>
+          ))}
+        </ul>
       </div>
     </header>
   );

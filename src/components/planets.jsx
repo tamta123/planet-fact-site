@@ -37,7 +37,7 @@ const Planets = ({ isMenuOpen }) => {
 
   return (
     <>
-      <div className="flex justify-between  px-6 w-full border-solid border-b-2 border-t-2 border-white border-opacity-20 mt-[70px]">
+      <div className="flex justify-between  px-6 w-full border-solid border-b-2 border-t-2 border-white border-opacity-20 mt-[70px] md:hidden">
         <button
           className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider  text-white  uppercase `}
           style={{
@@ -78,13 +78,14 @@ const Planets = ({ isMenuOpen }) => {
           Surface
         </button>
       </div>
+
       <Images planet={planet} status={currentDesktop.status} />
       <Text
         planet={planet}
         currentDesktop={currentDesktop}
-        isMenuOpen={isMenuOpen}
+        updateCurrentDesktop={updateCurrentDesktop}
       />
-      <Footer planet={planet} isMenuOpen={isMenuOpen} />
+      <Footer planet={planet} />
     </>
   );
 };
