@@ -1,12 +1,15 @@
 const Buttons = ({ currentDesktop, updateCurrentDesktop, planet }) => {
   return (
-    <div className="md:flex flex-col justify-between  px-6 w-full border-solid border-b-2 border-t-2 border-white border-opacity-20 mt-[70px] ">
+    <div className="md:flex flex-col gap-y-[16px] px-6 w-full h-auto mt-6">
       <button
-        className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider  text-white  uppercase `}
+        className={`flex justify-start items-center gap-x-[17px] font-spartan h-[50px] font-semibold text-[9px] border border-solid border-opacity-20 text-center tracking-wider  text-white  uppercase pl-[20px]`}
         style={{
-          opacity: currentDesktop.status === "overview" ? "1" : "0.5",
+          background:
+            currentDesktop.status === "overview" ? `${planet.color}` : "",
           borderColor:
-            currentDesktop.status === "overview" ? planet.color : "transparent",
+            currentDesktop.status === "overview"
+              ? planet.color
+              : "rgba(255, 255, 255, 0.2)",
         }}
         onClick={() => updateCurrentDesktop("overview")}
       >
@@ -14,13 +17,14 @@ const Buttons = ({ currentDesktop, updateCurrentDesktop, planet }) => {
         OVERVIEW
       </button>
       <button
-        className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider uppercase  text-white`}
+        className={`flex justify-start items-center gap-x-[17px] font-spartan h-[50px] font-semibold text-[9px] border border-solid border-opacity-20 text-center tracking-wider uppercase  text-white pl-[20px]`}
         style={{
-          opacity: currentDesktop.status === "structure" ? "1" : "0.5",
+          background:
+            currentDesktop.status === "structure" ? `${planet.color}` : "",
           borderColor:
             currentDesktop.status === "structure"
               ? planet.color
-              : "transparent",
+              : "rgba(255, 255, 255, 0.2)",
         }}
         onClick={() => updateCurrentDesktop("structure")}
       >
@@ -28,11 +32,14 @@ const Buttons = ({ currentDesktop, updateCurrentDesktop, planet }) => {
         Structure
       </button>
       <button
-        className={`font-spartan h-[50px] font-semibold text-[9px] border-b-4 border-solid text-center tracking-wider uppercase   text-white`}
+        className={`flex justify-start  items-center gap-x-[17px] font-spartan h-[50px] font-semibold text-[9px] border border-solid border-opacity-20 text-center tracking-wider uppercase   text-white pl-[20px]`}
         style={{
-          opacity: currentDesktop.status === "geology" ? "1" : "0.5",
+          background:
+            currentDesktop.status === "geology" ? `${planet.color}` : "",
           borderColor:
-            currentDesktop.status === "geology" ? planet.color : "transparent",
+            currentDesktop.status === "geology"
+              ? planet.color
+              : "rgba(255, 255, 255, 0.2)",
         }}
         onClick={() => updateCurrentDesktop("geology")}
       >

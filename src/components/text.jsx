@@ -1,8 +1,8 @@
 import Buttons from "./buttons";
 const Text = ({ planet, currentDesktop, updateCurrentDesktop }) => {
   return (
-    <div>
-      <div className="px-4 mt-16 mb-7 md:w-1/2 md:flex md:flex-col md:items-start md:px-8">
+    <div className="md:flex md:flex-row md:mt-16 ">
+      <div className="px-4 mt-16 mb-7 md:w-1/2 md:flex md:flex-col md:items-start md:px-8 md:mt-0">
         <h2 className="text-4xl font-normal leading-10 text-center uppercase text-white font-antonio mb-4">
           {planet.name}
         </h2>
@@ -28,11 +28,13 @@ const Text = ({ planet, currentDesktop, updateCurrentDesktop }) => {
           </svg>
         </div>
       </div>
-      <Buttons
-        currentDesktop={currentDesktop}
-        updateCurrentDesktop={updateCurrentDesktop}
-        planet={planet}
-      />
+      <div className="hidden md:flex w-1/2">
+        <Buttons
+          currentDesktop={currentDesktop}
+          updateCurrentDesktop={updateCurrentDesktop}
+          planet={planet}
+        />
+      </div>
     </div>
   );
 };

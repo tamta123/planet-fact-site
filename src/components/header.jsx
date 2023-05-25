@@ -5,7 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 const Header = ({ toggleMenu, isMenuOpen }) => {
   return (
-    <header className="flex z-999 top-0 fixed h-auto w-full items-center justify-center py-4 px-6 bg-header-blue md:justify-center ">
+    <header className="flex z-999 top-0 fixed h-auto w-full items-center justify-center py-4 px-6 bg-[#070724] md:justify-center ">
       <h1 className="font-antonio  font-medium text-base leading-9 tracking-tight uppercase text-white	">
         THE PLANETS
       </h1>
@@ -22,7 +22,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
       </svg>
       <div className="w-full z-999 fixed top-[63px] left-0 z-20 transition-all duration-500 ease-in">
         {isMenuOpen ? (
-          <ul className="flex flex-col items-start w-full pl-6 pr-6 bg-header-blue z-999 ">
+          <ul className="flex flex-col items-start w-full pl-6 pr-6 bg-header-blue z-900 ">
             {planetData.map((planet) => (
               <div
                 key={planet.name}
@@ -58,9 +58,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
                 key={planet.name}
                 className="font-spartan text-center font-semibold text-xs leading-5 tracking-wide uppercase text-white "
               >
-                <Link to={`/${planet.name}`} onClick={toggleMenu}>
-                  {planet.name}
-                </Link>
+                <Link to={`/${planet.name}`}>{planet.name}</Link>
               </li>
             </div>
           ))}
