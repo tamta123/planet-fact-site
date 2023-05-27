@@ -1,12 +1,12 @@
 import Buttons from "./buttons";
 const Text = ({ planet, currentDesktop, updateCurrentDesktop }) => {
   return (
-    <div className="md:flex md:flex-row md:mt-16 ">
-      <div className="px-4 mt-16 mb-7 md:w-1/2 md:flex md:flex-col md:items-start md:px-8 md:mt-0">
-        <h2 className="text-4xl font-normal leading-10 text-center uppercase text-white font-antonio mb-4">
+    <div className="md:flex md:flex-row md:mt-16 xl:flex-col xl:mt-0 xl:items-center xl:justify-center xl:w-1/2">
+      <div className="px-4 mt-16 mb-7 md:w-1/2 md:flex md:flex-col md:items-start md:px-8 md:mt-0 xl:w-ful xl:p-0">
+        <h2 className="text-4xl font-normal leading-10 text-center uppercase text-white font-antonio mb-4 xl:text-7xl">
           {planet.name}
         </h2>
-        <p className="text-xs font-normal leading-5 text-center text-white font-spartan mb-8 md:text-left">
+        <p className="text-xs font-normal leading-5 text-center text-white font-spartan mb-8 md:text-left xl:text-base xl:leading-[25px] xl:p-0">
           {currentDesktop.about}
         </p>
         <div className="flex gap-[4px] items-center justify-center text-xs font-normal leading-6 text-white font-spartan mix-blend-normal opacity-50">
@@ -28,7 +28,7 @@ const Text = ({ planet, currentDesktop, updateCurrentDesktop }) => {
           </svg>
         </div>
       </div>
-      <div className="hidden md:flex w-1/2">
+      <div className="hidden md:flex w-[52%] xl:flex">
         <Buttons
           currentDesktop={currentDesktop}
           updateCurrentDesktop={updateCurrentDesktop}

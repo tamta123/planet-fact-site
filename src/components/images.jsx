@@ -13,7 +13,7 @@ const Images = ({ planet, status }) => {
   const imageSrc = renderImage();
 
   return (
-    <div className="flex justify-center align-middle mt-16 md:mt-40">
+    <div className="flex justify-center items-center mt-16 md:mt-40 xl:mt-0 xl:w-1/2">
       {status === "geology" ? (
         <>
           <img

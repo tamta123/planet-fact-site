@@ -5,7 +5,7 @@ import Text from "./text";
 import Images from "./images";
 import Footer from "./footer";
 
-const Planets = ({ isMenuOpen }) => {
+const Planets = ({ status, isMenuOpen }) => {
   const { name } = useParams();
   console.log(isMenuOpen);
 
@@ -78,13 +78,15 @@ const Planets = ({ isMenuOpen }) => {
           Surface
         </button>
       </div>
-
-      <Images planet={planet} status={currentDesktop.status} />
-      <Text
-        planet={planet}
-        currentDesktop={currentDesktop}
-        updateCurrentDesktop={updateCurrentDesktop}
-      />
+      <div className="xl:flex xl:flex-row justify-between xl:mt-40 xl:h-[582px] xl:w-100vw">
+        <Images planet={planet} status={currentDesktop.status} />
+        <Text
+          planet={planet}
+          status={status}
+          currentDesktop={currentDesktop}
+          updateCurrentDesktop={updateCurrentDesktop}
+        />
+      </div>
       <Footer planet={planet} />
     </>
   );
