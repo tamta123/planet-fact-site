@@ -8,6 +8,10 @@ export default {
         "header-blue": "#070724",
         "header-border": "#FFFFFF",
       },
+      fontFamily: {
+        antonio: ['"Antonio"'],
+        spartan: ['"League Spartan"'],
+      },
     },
   },
   plugins: [],

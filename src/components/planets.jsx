@@ -7,10 +7,8 @@ import Footer from "./footer";
 
 const Planets = ({ status, isMenuOpen }) => {
   const { name } = useParams();
-  console.log(isMenuOpen);
 
   const planet = planetData.find((planet) => planet.name === name);
-  console.log(planet);
 
   const [currentDesktop, setCurrentDesktop] = useState({
     status: "overview",

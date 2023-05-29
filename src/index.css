@@ -49,4 +49,50 @@ body {
       background-position: 0px;
     }
   }
+  .planet-enter-animation {
+    animation: left 1.5s;
+  }
+
+  @keyframes left {
+    0% {
+      opacity: 0;
+      transform: translate(-400px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  .geology-enter-animation {
+    animation: from-top 1.5s;
+  }
+
+  @keyframes from-top {
+    0% {
+      opacity: 1;
+      transform: translateY(-60%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(9%);
+    }
+  }
+  .structure-enter-animation {
+    animation: right 1.5s;
+  }
+
+  @keyframes right {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
