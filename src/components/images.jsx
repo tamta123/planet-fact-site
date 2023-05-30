@@ -29,7 +29,7 @@ const Images = ({ planet, status }) => {
             src={planet.images.planet}
           />
           <img
-            className={`absolute top-[390px] z-[-10] w-32 h-40 md:top-[360px] xl:translate-y-[30%] md:translate-y-[5%] ${
+            className={`absolute top-[390px] z-[-10] w-32 h-40 md:top-[360px] md:translate-y-[5%] ${
               status === "geology" ? "geology-enter-animation" : ""
             }`}
             src={planet.images.geology}

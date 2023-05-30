@@ -5,7 +5,7 @@ const Buttons = ({ currentDesktop, updateCurrentDesktop, planet }) => {
   const handleHoverOn = (e) => {
     setIsHoverBtn(e.target.value);
   };
-  const handleHoverOff = (e) => {
+  const handleHoverOff = () => {
     setIsHoverBtn("");
   };
   return (
