@@ -1,12 +1,11 @@
 import planetData from "../data.json";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import NavBtn from "./navBtn";
+import NavBtn from "./navBtn.jsx";
 
 const Header = ({ toggleMenu, isMenuOpen }) => {
   return (
-    <header className="flex z-50 top-0 fixed md:flex-col w-full items-center justify-between py-4 xl:pb-4 xl:pt-0 px-6 bg-[#070724] md:justify-center md:h-auto xl:flex-row md:border-solid md:border-b-2 md:border-white md:border-opacity-10 xl:justify-between xl:pl-[32px] xl:pr-[32px] xl:w-full">
-      <h1 className="font-antonio w-full font-medium text-base leading-9 tracking-tight uppercase text-white	xl:text-3xl md:text-center xl:text-left xl:pt-4 md:pb-4 xl:pb-0">
+    <header className="flex z-50 top-0 fixed md:flex-col w-full items-center justify-between py-4 xl:pb-0 xl:pt-0 px-6 bg-[#070724] md:justify-center md:h-auto xl:flex-row md:border-solid md:border-b-2 md:border-white md:border-opacity-10 xl:justify-between xl:pl-[32px] xl:pr-[32px] xl:w-full">
+      <h1 className="font-antonio w-full font-medium text-base leading-9 tracking-tight uppercase text-white	xl:text-3xl md:text-center xl:text-left xl:pt-0 md:pb-4 xl:pb-0">
         THE PLANETS
       </h1>
       <svg

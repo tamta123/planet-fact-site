@@ -19,7 +19,12 @@ const NavBtn = ({ planet }) => {
         className="font-spartan xl:pt-4 text-center font-semibold text-xs leading-5 tracking-wide uppercase text-white xl:border-t-8 border-solid"
         onMouseEnter={handleHoverOn}
         onMouseLeave={handleHoverOff}
-        style={{ borderColor: isHover ? planet.color : "transparent" }}
+        style={{
+          borderColor: isHover ? planet.color : "transparent",
+          color: isHover
+            ? "rgba(255, 255, 255, 1)"
+            : "rgba(255, 255, 255, 0.75)",
+        }}
       >
         <Link to={`/${planet.name}`}>{planet.name}</Link>
       </li>

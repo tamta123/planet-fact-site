@@ -10,12 +10,12 @@ const Text = ({ planet, currentDesktop, updateCurrentDesktop }) => {
           {currentDesktop.about}
         </p>
         <div className="flex gap-[4px] items-center justify-center text-xs font-normal leading-6 text-white font-spartan mix-blend-normal opacity-50">
-          <span>source:</span>
+          <span className="xl:text-[14px]">source:</span>
           <a
             href={currentDesktop.source}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold ml-1 underline"
+            className="font-bold ml-1 underline xl:text-[13px]"
           >
             Wikipedia
           </a>
